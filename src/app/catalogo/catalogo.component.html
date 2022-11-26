@@ -8,8 +8,9 @@
 </div>
 -->
 
-<div class="casas">
+<!--<h1 *ngIf="!listaPage"> Loaaading......</h1>-->
 
+<div class="casas">
   <app-casa
     *ngFor="let i of this.listaPage"
     [featured_photo]="i.featured_photo"
@@ -18,9 +19,12 @@
     [host_type]="i.host_type"
     [price]="i.price"
     [rating]="i.rating"
+    [id]="i.id"
+    [title] = "i.title"
+
     tipo="catalogo"
   ></app-casa>
 
-  <div class="maisres" (click)="maisResultados()">mais resultados</div>
+  <div class="maisres" (click)=maisResultados()>mais resultados</div>
 </div>
 

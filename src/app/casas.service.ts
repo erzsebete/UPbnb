@@ -25,6 +25,25 @@ export class CasasService {
   getObjPast() {
     return this.http.get(BASE_URL + "/past");
   }
+
+  getObjDetalhe(id:number) {
+    return this.http.get(BASE_URL + "/" + id);
+  }
+
+
+  getObjHost(id:number) {
+    return this.http.get(BASE_URL + "/"+ id +"/host");
+  }
+
+  getObjReviews (id:number) {
+    return this.http.get(BASE_URL + "/"+ id +"/reviews");
+  }
+
+  getObjFeatures (id:number) {
+    return this.http.get(BASE_URL + "/"+ id +"/features");
+  }
+
+
 }
 
 

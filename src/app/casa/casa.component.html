@@ -1,4 +1,4 @@
-<div class="casacontainer">
+<div class="casacontainer" [routerLink]="['/detalhes',id]" title="{{title}}">
 
   <div class="imagem" [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
     <fa-icon class="iconHeart" [icon]="faHeart"></fa-icon>

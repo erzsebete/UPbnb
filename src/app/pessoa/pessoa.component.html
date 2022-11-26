@@ -1,0 +1,25 @@
+<div class="pessoacontainer">
+
+  <div class="fotopessoa" [ngStyle]="{'background-image': 'url(' + photo + ')'}"></div>
+
+
+  <div class="textohost">
+
+    <p class="nome">{{name}}</p>
+
+    <div class="ratinghost">
+      <fa-icon class="iconStar" *ngIf="tipo ==='Host'"  [icon]="faStar"></fa-icon>
+      <p class="rating"  *ngIf="tipo ==='Host'"  >{{rating | number: '1.0-1':'pt'}}</p>
+      <p class="rating"  *ngIf="tipo ==='Review'">{{date}}</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="selftext" *ngIf="tipo ==='Host'" >
+  Adorooooo tipo sei lá, explorar tipo coisas e o mundo e arredores e cenas e afins.
+</div>
+
+<div class="selftext" *ngIf="tipo ==='Review'" >
+  {{comment}}
+</div>

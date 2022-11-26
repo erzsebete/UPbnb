@@ -20,14 +20,16 @@ export class CatalogoComponent implements OnInit {
   listaPage : Casa[] = [];
 
 
-  constructor(private casasService : CasasService) {}
+  constructor(private route: ActivatedRoute, private casasService : CasasService) {
+    this.id = route.snapshot.params['id_casa'];
+  }
 
   ngOnInit(): void {
 
 
     this.casasService.getListaPage(this.id).subscribe(lp => {
       this.objTodasCasas = <ListaCasas> lp;
-      this.listaPage = [...this.objTodasCasas.data]
+      this.listaPage = this.objTodasCasas.data
     })
 
   }

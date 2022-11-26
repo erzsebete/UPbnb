@@ -22,6 +22,8 @@ export class CasaComponent {
   @Input() price!: number;
   @Input() rating!: number;
   @Input() time?: string;
+  @Input() id! : number;
+  @Input() title! : string;
 
 
 }

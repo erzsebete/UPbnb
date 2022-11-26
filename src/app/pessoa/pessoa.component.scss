@@ -1,0 +1,53 @@
+.pessoacontainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+
+  * {
+    margin-right: 2px;
+  }
+
+  .fotopessoa {
+    border-radius: 50%;
+    background-size: cover;
+    padding: 8%;
+    background-position: center;
+    height: min-content;
+    margin-left: 0;
+    justify-content: flex-start;
+    margin-right: 20px;
+  }
+
+  .textohost {
+
+    .nome {
+      margin: 0;
+    }
+
+    .ratinghost {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      margin: 0;
+      height: min-content;
+
+
+      .iconStar {
+        font-size: 12px;
+        margin: 0;
+        padding-right: 5px;
+      }
+
+      .rating {
+        margin: 0;
+        font-size: 13px;
+      }
+      .data
+      {
+
+
+      }
+    }
+  }
+}

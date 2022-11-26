@@ -14,6 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { FavoritoComponent } from './favorito/favorito.component';
 import pt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { DetalhesComponent } from './detalhes/detalhes.component';
+import { PessoaComponent } from './pessoa/pessoa.component';
+
+
 registerLocaleData(pt)
 
 @NgModule({
@@ -24,7 +28,9 @@ registerLocaleData(pt)
     CatalogoComponent,
     FavoritosComponent,
     HomeComponent,
-    FavoritoComponent
+    FavoritoComponent,
+    DetalhesComponent,
+    PessoaComponent
   ],
   imports: [
     BrowserModule,

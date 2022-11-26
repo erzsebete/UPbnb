@@ -1,0 +1,71 @@
+
+.textotop {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+
+
+  .titulo {
+    margin: 0;
+  }
+
+  .ratlocal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+
+    * {
+      margin-right: 10px;
+    }
+
+    .iconStar {
+    }
+
+    .dot {
+      color: darkgray;
+      font-size: 7pt;
+    }
+  }
+}
+
+.imagem {
+
+  margin: 0;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  padding-bottom: 57%;
+  background-size: cover;
+  background-position: center;
+
+  .iconHeart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 3px;
+    margin-right: 7px;
+    color: white;
+  }
+}
+
+.preco {
+  font-size: 12px;
+  margin: 0;
+}
+
+.bonecos {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 50%;
+
+
+  .icon {
+    background-color: #004F63;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 5px 7px 3px 7px;
+    margin-bottom: 10px;
+  }
+}
