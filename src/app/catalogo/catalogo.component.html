@@ -1,0 +1,26 @@
+<!--
+<div class="search" (change)="listaCasas">
+
+  <fa-icon class="iconSearch" [icon]="faMagnifyingGlass"></fa-icon>
+
+  <input [(ngModel)]="procurar">
+  <p>{{ procurar }}</p>
+</div>
+-->
+
+<div class="casas">
+
+  <app-casa
+    *ngFor="let i of this.listaPage"
+    [featured_photo]="i.featured_photo"
+    [city]="i.city"
+    [country]="i.country"
+    [host_type]="i.host_type"
+    [price]="i.price"
+    [rating]="i.rating"
+    tipo="catalogo"
+  ></app-casa>
+
+  <div class="maisres" (click)="maisResultados()">mais resultados</div>
+</div>
+

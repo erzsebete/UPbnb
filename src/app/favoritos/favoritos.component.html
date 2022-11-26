@@ -1,0 +1,18 @@
+<h1>Favoritos</h1>
+<h2>Portugal</h2>
+
+<div class="favcontainer">
+<app-favorito
+
+  *ngFor="let i of this.objTodasCasas.data"
+  [featured_photo]="i.featured_photo"
+  [city]="i.city"
+  [country]="i.country"
+  [host_type]="i.host_type"
+  [price]="i.price"
+  [rating]="i.rating"
+  tipo="catalogo"
+>
+
+</app-favorito>
+</div>

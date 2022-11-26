@@ -1,0 +1,33 @@
+<h1>Bem-vindo(a)</h1>
+<h2>Ao seu perfil</h2>
+<h3>As minhas reservas</h3>
+
+<div class="reservas">
+  <app-casa
+    *ngFor="let i of this.objResAtual.data"
+    [featured_photo]="i.featured_photo"
+    [city]="i.city"
+    [country]="i.country"
+    [host_type]="i.host_type"
+    [time]="i.time"
+    [price]="i.price"
+    [rating]="i.rating"
+    tipo="reservas"
+  ></app-casa>
+</div>
+
+
+<h3>Reservas passadas</h3>
+
+<div class="reservas">
+  <app-casa
+    *ngFor="let i of this.objResPast.data"
+    [featured_photo]="i.featured_photo"
+    [city]="i.city"
+    [country]="i.country"
+    [host_type]="i.host_type"
+    [time]="i.time"
+    [price]="i.price"
+    tipo="reservas"
+  ></app-casa>
+</div>

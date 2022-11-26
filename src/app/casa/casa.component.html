@@ -1,0 +1,22 @@
+<div class="casacontainer">
+
+  <div class="imagem" [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
+    <fa-icon class="iconHeart" [icon]="faHeart"></fa-icon>
+  </div>
+
+  <div class="localstar">
+    <p class="local">{{city}}, {{country}}</p>
+    <fa-icon class="iconStar" [icon]="faStar"></fa-icon>
+    <p class="rating">{{rating | number: '1.0-1':'pt' }}</p>
+  </div>
+
+  <div class="anfitrireservas">
+    <p class="anfitriao" *ngIf="tipo ==='catalogo'">Anfitrião {{host_type}}</p>
+    <p class="reservas" *ngIf="tipo ==='reservas'">{{time}}</p>
+  </div>
+
+  <div class="preco">
+    <b>{{price}}€</b> noite
+  </div>
+
+</div>

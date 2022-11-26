@@ -1,0 +1,36 @@
+/*.search
+{
+  border-radius: 5px;
+  border: darkgrey 1.5px solid;
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+
+  .iconSearch
+  {
+    color: darkgrey;
+    margin-right: 20px;
+  }
+}*/
+
+
+.casas
+{
+  display: flex;
+  flex-wrap: wrap;
+
+  .maisres{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 11pt;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #004F63;
+    margin-top: 5px;
+
+
+  }
+}

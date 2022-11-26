@@ -6,8 +6,9 @@ interface Casa {
   city: string,
   rating: number,
   price: number,
-  host_type: string,
-  feature_photo: string
+  host_type?: string,
+  time?: string,
+  featured_photo: string
 }
 
 export {Casa};
