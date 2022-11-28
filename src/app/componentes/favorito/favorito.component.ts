@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {faHeart}   from '@fortawesome/free-regular-svg-icons';
 import {faStar, faHeart as faHeartFull}   from '@fortawesome/free-solid-svg-icons';
+import {CasasService} from "../../casas.service";
 
 @Component({
   selector: 'app-favorito',
@@ -22,7 +23,10 @@ export class FavoritoComponent {
   @Input() price!: number;
   @Input() rating!: number;
   @Input() time?: string;
+  @Input() id! : number;
 
+  constructor(public casasService: CasasService) {
+  }
 
 
 }

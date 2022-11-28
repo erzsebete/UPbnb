@@ -1,18 +1,23 @@
+
+<!--<input class="search" placeholder="Pesquisar" >-->
+
 <!--
 <div class="search" (change)="listaCasas">
 
   <fa-icon class="iconSearch" [icon]="faMagnifyingGlass"></fa-icon>
 
-  <input [(ngModel)]="procurar">
+  <input [(ngModel)]="procurar">.
+
+
   <p>{{ procurar }}</p>
 </div>
 -->
 
-<!--<h1 *ngIf="!listaPage"> Loaaading......</h1>-->
+
 
 <div class="casas">
   <app-casa
-    *ngFor="let i of this.listaPage"
+    *ngFor="let i of listaPage"
     [featured_photo]="i.featured_photo"
     [city]="i.city"
     [country]="i.country"
@@ -21,10 +26,9 @@
     [rating]="i.rating"
     [id]="i.id"
     [title] = "i.title"
-
     tipo="catalogo"
   ></app-casa>
 
-  <div class="maisres" (click)=maisResultados()>mais resultados</div>
+  <div class="maisres" (click)=maisResultados() *ngIf="listaPage.length>0">mais resultados</div>
 </div>
 

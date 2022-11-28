@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CasasService} from "../casas.service";
-import {ListaCasas,Casa} from "../interfaces";
+import {CasasService} from "../../casas.service";
+import {ListaCasas,Casa} from "../../interfaces";
 import {faMagnifyingGlass}   from '@fortawesome/free-solid-svg-icons';
 
 
@@ -15,30 +15,28 @@ export class CatalogoComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass
 
 
-  id: number = 1;
+  id: number = 0;
   objTodasCasas = {} as ListaCasas;
   listaPage : Casa[] = [];
 
 
-  constructor(private route: ActivatedRoute, private casasService : CasasService) {
-    this.id = route.snapshot.params['id_casa'];
-  }
+  constructor(private casasService : CasasService) {}
 
   ngOnInit(): void {
 
-
-    this.casasService.getListaPage(this.id).subscribe(lp => {
+    this.maisResultados()
+    /*this.casasService.getListaPage(this.id).subscribe(lp => {
       this.objTodasCasas = <ListaCasas> lp;
       this.listaPage = this.objTodasCasas.data
-    })
-
+    })*/
   }
 
   maisResultados() {
       this.id += 1 ;
      this.casasService.getListaPage(this.id).subscribe(lp => {
       this.objTodasCasas = <ListaCasas> lp;
-       this.objTodasCasas.data.forEach(i => this.listaPage.push(i));
+      this.listaPage.push(...this.objTodasCasas.data);
+       //this.objTodasCasas.data.forEach(i => this.listaPage.push(i));
     })
 
   }

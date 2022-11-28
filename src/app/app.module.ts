@@ -3,20 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CasaComponent } from './casa/casa.component';
-import { CatalogoComponent } from './catalogo/catalogo.component';
+import { CasaComponent } from './componentes/casa/casa.component';
+import { CatalogoComponent } from './paginas/catalogo/catalogo.component';
 import { CommonModule} from '@angular/common';
 import { RouterLink} from "@angular/router";
-import { FavoritosComponent } from './favoritos/favoritos.component';
-import { HomeComponent } from './home/home.component';
-import { FavoritoComponent } from './favorito/favorito.component';
+import { FavoritosComponent } from './paginas/favoritos/favoritos.component';
+import { HomeComponent } from './paginas/home/home.component';
+import { FavoritoComponent } from './componentes/favorito/favorito.component';
 import pt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { DetalhesComponent } from './detalhes/detalhes.component';
-import { PessoaComponent } from './pessoa/pessoa.component';
-
+import { DetalhesComponent } from './paginas/detalhes/detalhes.component';
+import { PessoaComponent } from './componentes/pessoa/pessoa.component';
 
 registerLocaleData(pt)
 
@@ -30,7 +29,7 @@ registerLocaleData(pt)
     HomeComponent,
     FavoritoComponent,
     DetalhesComponent,
-    PessoaComponent
+    PessoaComponent,
   ],
   imports: [
     BrowserModule,

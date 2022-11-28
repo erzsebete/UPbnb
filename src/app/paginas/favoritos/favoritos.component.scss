@@ -1,0 +1,13 @@
+
+.outside {
+  display: flex;
+  flex-direction: column;
+
+  .favcontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+

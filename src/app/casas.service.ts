@@ -14,6 +14,8 @@ export class CasasService {
 
   constructor(private http: HttpClient) { }
 
+  listaFav: number [] = JSON.parse(localStorage.getItem("favoritos") || "[]");
+
   getListaPage(id:number) {
     return this.http.get(BASE_URL + "?page=" + id);
   }
@@ -43,6 +45,28 @@ export class CasasService {
     return this.http.get(BASE_URL + "/"+ id +"/features");
   }
 
+  toggleFavorite(id:number) {
+
+    if (this.isFavorite(id))
+    {
+      this.listaFav.splice(this.listaFav.indexOf(id), 1);
+      this.guardarLocalStorage();
+    }
+    else
+    {
+      this.listaFav.push(id)
+      this.guardarLocalStorage()
+    }
+  }
+
+  isFavorite(id:number) {
+    return this.listaFav.includes(id);
+  }
+
+  guardarLocalStorage ()
+  {
+    localStorage.setItem("favoritos", JSON.stringify(this.listaFav));
+  }
 
 }
 

@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {faHeart } from '@fortawesome/free-regular-svg-icons';
 import {faStar, faHeart as faHeartFull,  faTv, faDog, faCircleStop,faWifi,faTemperatureLow,faSmoking,faFireBurner,faTablet} from '@fortawesome/free-solid-svg-icons';
 import {ActivatedRoute} from "@angular/router";
-import {CasasService} from "../casas.service";
-import {Detalhes, Features, Host, Review, Reviews} from "../interfaces";
+import {CasasService} from "../../casas.service";
+import {Detalhes, Features, Host, Review, Reviews} from "../../interfaces";
 
 @Component({
   selector: 'app-detalhes',
@@ -26,9 +26,6 @@ export class DetalhesComponent implements OnInit {
   faTablet=faTablet;
 
 
-
-
-
   objHost = {} as Host;
   objReviews = {} as Reviews;
   listReviews: Review [] = [];
@@ -38,11 +35,9 @@ export class DetalhesComponent implements OnInit {
   objFeatures = {} as Features;
   listFeatures: string [] = [];
 
-  incluiIcon : string = "";
+  id: number;
 
-  id: number = 1;
-
-  constructor(private route: ActivatedRoute, private casasService: CasasService) {
+  constructor(private route: ActivatedRoute, public casasService: CasasService) {
     this.id = route.snapshot.params['id_casa'];
   }
 

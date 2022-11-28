@@ -1,7 +1,7 @@
-<div class="casacontainer" [routerLink]="['/detalhes',id]" title="{{title}}">
+<div class="casacontainer"  [routerLink]="['/detalhes',id]">
 
-  <div class="imagem" [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
-    <fa-icon class="iconHeart" [icon]="faHeart"></fa-icon>
+  <div class="imagem" title="{{title}}"   [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
+    <fa-icon class="iconHeart" (click)="$event.stopPropagation(); casasService.toggleFavorite(id)" [icon]="casasService.isFavorite(id) ? faHeartFull : faHeart"></fa-icon>
   </div>
 
   <div class="localstar">

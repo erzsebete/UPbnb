@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {CasasService} from "../casas.service";
-import {ListaCasas} from "../interfaces";
+import {CasasService} from "../../casas.service";
+import {ListaCasas} from "../../interfaces";
 
 @Component({
   selector: 'app-home',
