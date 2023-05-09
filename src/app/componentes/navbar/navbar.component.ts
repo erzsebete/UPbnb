@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {faMagnifyingGlass, faHeart as faHeartFull}   from '@fortawesome/free-solid-svg-icons';
+import { Component } from '@angular/core';
+import {faMagnifyingGlass}   from '@fortawesome/free-solid-svg-icons';
 import {faHeart}   from '@fortawesome/free-regular-svg-icons';
 
 @Component({
@@ -7,15 +7,9 @@ import {faHeart}   from '@fortawesome/free-regular-svg-icons';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   faMagnifyingGlass = faMagnifyingGlass;
   faHeart = faHeart;
-  faHeartFull = faHeartFull;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

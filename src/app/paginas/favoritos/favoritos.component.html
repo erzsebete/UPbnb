@@ -1,10 +1,10 @@
-<h1>Favoritos</h1>
+<h1 class="titulo">Meus Favoritos</h1>
 
-<div class="outside" *ngFor="let p of listapaises">
+<div class="paiscontainer" *ngFor="let p of listapaises">
 
-  <h2>{{p}}</h2>
+  <h2 class="pais">{{p}}</h2>
 
-  <div class="favcontainer" *ngFor="let i of listafavoritos">
+  <div *ngFor="let i of listafavoritos">
 
     <div *ngIf="i.country === p">
 
@@ -16,6 +16,7 @@
         [price]="i.price"
         [rating]="i.rating"
         [id]="i.id"
+        [title]="i.title"
         tipo="catalogo"
       ></app-favorito>
 

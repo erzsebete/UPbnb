@@ -1,13 +1,18 @@
+.titulo {
 
-.outside {
-  display: flex;
-  flex-direction: column;
-
-  .favcontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  font-size: 26px;
+  padding-left: 10px;
+  color: #244e62;
   }
-}
 
+.paiscontainer {
+  margin-bottom: 15px;
+
+  .pais {
+    margin-top: 0;
+    margin-left: 10px;
+    color: #004f63;
+  }
+
+}
 

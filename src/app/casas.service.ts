@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Casa} from "./interfaces";
+import {Detalhes, Features, Host, ListaCasas, Photos, Reviews} from "./interfaces";
 
 const BASE_URL = "https://m9-frontend.upskill.appx.pt/upbnb/casas"
 
@@ -11,38 +11,45 @@ const BASE_URL = "https://m9-frontend.upskill.appx.pt/upbnb/casas"
 
 export class CasasService {
 
-
   constructor(private http: HttpClient) { }
 
   listaFav: number [] = JSON.parse(localStorage.getItem("favoritos") || "[]");
 
-  getListaPage(id:number) {
-    return this.http.get(BASE_URL + "?page=" + id);
+
+  getFavoritos()
+  {
+    return this.http.get<ListaCasas>(BASE_URL + "/?&ids=" + this.listaFav);
   }
 
+
   getObjCurrent() {
-    return this.http.get(BASE_URL + "/current");
+    return this.http.get<ListaCasas>(BASE_URL + "/current");
   }
 
   getObjPast() {
-    return this.http.get(BASE_URL + "/past");
+    return this.http.get<ListaCasas>(BASE_URL + "/past");
   }
 
   getObjDetalhe(id:number) {
-    return this.http.get(BASE_URL + "/" + id);
+    return this.http.get<Detalhes>(BASE_URL + "/" + id);
   }
 
 
   getObjHost(id:number) {
-    return this.http.get(BASE_URL + "/"+ id +"/host");
+    return this.http.get<Host>(BASE_URL + "/"+ id +"/host");
   }
 
   getObjReviews (id:number) {
-    return this.http.get(BASE_URL + "/"+ id +"/reviews");
+    return this.http.get<Reviews>(BASE_URL + "/"+ id +"/reviews");
   }
 
   getObjFeatures (id:number) {
-    return this.http.get(BASE_URL + "/"+ id +"/features");
+    return this.http.get<Features>(BASE_URL + "/"+ id +"/features");
+  }
+
+  getPhotos (id:number)
+  {
+    return this.http.get<Photos>(BASE_URL + "/"+ id +"/photos");
   }
 
   toggleFavorite(id:number) {
@@ -66,6 +73,11 @@ export class CasasService {
   guardarLocalStorage ()
   {
     localStorage.setItem("favoritos", JSON.stringify(this.listaFav));
+  }
+
+  getsearchListaPage (id:number, frase:string)
+  {
+    return this.http.get<ListaCasas>(BASE_URL + "?page=" + id + "&search=" + frase);
   }
 
 }

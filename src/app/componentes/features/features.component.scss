@@ -1,0 +1,37 @@
+
+.caixa {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(246, 246, 246);
+  border-radius: 5px;
+  padding: 10px 10px 0 10px;
+
+
+  .icontainer {
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    .divicon {
+      width: 30px;
+      height: 30px;
+      background-color: darkgrey;
+      border-radius: 5px;
+      color: #fbfefe;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+
+      &.active {
+        background-color: #004F63;
+      }
+
+    }
+
+  }
+}
+

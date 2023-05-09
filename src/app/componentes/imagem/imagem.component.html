@@ -1,0 +1,8 @@
+
+
+  <div class="imagem" title="{{title}}"  [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
+    <fa-icon class="iconHeart" (click)="$event.stopPropagation(); casasService.toggleFavorite(id)"
+             [icon]="casasService.isFavorite(id) ? faHeartFull : faHeart"></fa-icon>
+  </div>
+
+

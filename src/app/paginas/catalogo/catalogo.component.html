@@ -1,23 +1,16 @@
+<h1 class="titulo">Catálogo</h1>
 
-<!--<input class="search" placeholder="Pesquisar" >-->
+<div class="topbox">
+  <div class="containersearch">
+    <input class="inputsearch" type="text" placeholder="Pesquisar" ngModel (ngModelChange)="procurar($event)">
+    <fa-icon class="iconSearch" [icon]="faMagnifyingGlass"></fa-icon>
+  </div>
 
-<!--
-<div class="search" (change)="listaCasas">
-
-  <fa-icon class="iconSearch" [icon]="faMagnifyingGlass"></fa-icon>
-
-  <input [(ngModel)]="procurar">.
-
-
-  <p>{{ procurar }}</p>
 </div>
--->
-
-
 
 <div class="casas">
   <app-casa
-    *ngFor="let i of listaPage"
+    *ngFor="let i of listaCasas"
     [featured_photo]="i.featured_photo"
     [city]="i.city"
     [country]="i.country"
@@ -25,10 +18,20 @@
     [price]="i.price"
     [rating]="i.rating"
     [id]="i.id"
-    [title] = "i.title"
+    [title]="i.title"
     tipo="catalogo"
   ></app-casa>
 
-  <div class="maisres" (click)=maisResultados() *ngIf="listaPage.length>0">mais resultados</div>
 </div>
+
+<div class="rescontainer">
+  <div class="maisres" (click)=maisResultados() *ngIf="!loading">Mais resultados</div>
+</div>
+
+
+<div class="loadercontainer">
+  <div class="loader" *ngIf="loading"></div>
+</div>
+
+
 

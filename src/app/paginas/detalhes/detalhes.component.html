@@ -1,89 +1,43 @@
-<!--<div class="wrapper">-->
-
-<div class="textotop">
-  <h1 class="titulo">{{this.objDetalhe.title}}</h1>
+<div class="textotop mudarcor">
+  <h1 class="titulo">{{objDetalhe.title}}</h1>
 
   <div class="ratlocal">
-
     <fa-icon class="iconStar" [icon]="faStar"></fa-icon>
-
-    <p class="rating">{{this.objDetalhe.rating | number: '1.0-1':'pt' }}</p>
-
-    <p class="dot">&#x2022; </p>
-    <p> {{this.objDetalhe.city}}, {{this.objDetalhe.country}}</p>
-
+    <p class="rating">{{objDetalhe.rating | number: '1.0-1':'pt' }}</p>
+    <p class="dot">&#x2022;</p>
+    <p> {{objDetalhe.city}}, {{objDetalhe.country}}</p>
   </div>
 
 </div>
 
 
-<div  class="imagem" [ngStyle]="{'background-image': 'url('+this.objDetalhe.featured_photo+')'}">
-  <fa-icon class="iconHeart" (click)="casasService.toggleFavorite(this.objDetalhe.id)"
-           [icon]="casasService.isFavorite(this.objDetalhe.id) ? faHeartFull : faHeart"
-  ></fa-icon>
-</div>
+<app-imagem
+  [id]=id
+  [title]=objDetalhe.title
+  [featured_photo]=objDetalhe.featured_photo
+></app-imagem>
 
+<div class="preco mudarcor"><b>{{objDetalhe.price}}€</b> noite</div>
 
-<div class="preco">
-  <b>{{this.objDetalhe.price}}€</b> noite
+<div class="descricao">{{objDetalhe.description}}</div>
 
-</div>
-
-<div class="descricao">
-  <p>
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  </p>
-</div>
-
-
-<div class="bonecos">
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('petsAllowed') ? '#004F63' : 'darkgray'"
-           title="Pets Allowed" [icon]="faDog"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('tv') ? '#004F63' : 'darkgray'"
-           title="TV" [icon]="faTv"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('washingMachine') ? '#004F63' : 'darkgray'"
-           title="Washing Machine" [icon]="faCircleStop"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('wifi') ? '#004F63' : 'darkgray'"
-           title="WI-FI" [icon]="faWifi"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('airConditioner') ? '#004F63' : 'darkgray'"
-           title="Air Conditioner" [icon]="faTemperatureLow"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('smokingAllowed') ? '#004F63' : 'darkgray'"
-           title="Smoking Allowed" [icon]="faSmoking"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('fireplace') ? '#004F63' : 'darkgray'"
-           title="Fireplace" [icon]="faFireBurner"></fa-icon>
-  <fa-icon class="icon" [style.backgroundColor]="this.listFeatures.includes('microwave') ? '#004F63' : 'darkgray'"
-           title="Microwave" [icon]="faTablet"></fa-icon>
-</div>
-
+<app-features [id]="id"></app-features>
 
 <div class="host">
   <app-pessoa
     [photo]="objHost.photo"
     [name]="objHost.name"
     [rating]="objHost.rating"
+    [country]="objDetalhe.country"
+    [city]="objDetalhe.city"
     tipo="Host"
   ></app-pessoa>
 </div>
 
+<h2 class="mudarcor">Galeria</h2>
 
-<div class="galeria">
-  <h2>Galeria</h2>
-  <div>
-    fotos
-  </div>
-</div>
+<app-fotoscasa [id]="id"></app-fotoscasa>
 
-<div class="comentarios">
-  <h2>Comentários</h2>
-  <app-pessoa
-    *ngFor="let i of listReviews"
-    [photo]="i.photo"
-    [name]="i.name"
-    [date]="i.date"
-    [comment]="i.comment"
-    tipo="Review"
-  ></app-pessoa>
-</div>
+<h2 class="mudarcor">Comentários</h2>
+
+<app-comentarios class="mudarcor" [id]="id" [city]="objDetalhe.city"></app-comentarios>

@@ -1,10 +1,21 @@
-<h1>Bem-vindo(a)</h1>
-<h2>Ao seu perfil</h2>
-<h3>As minhas reservas</h3>
+
+<section class="section1">
+
+    <div class="imgprofile" [ngStyle]="{'background-image': 'url(../../../assets/profile.png)'}">
+    </div>
+
+<div class="texto">
+  <h1 class="welcome">Bem-vindo(a)</h1>
+  <h2 class="perfil">O Meu Perfil</h2>
+</div>
+</section>
+
+
+<h3 class="reservasAtuais">Reservas Ativas</h3>
 
 <div class="reservas">
   <app-casa
-    *ngFor="let i of this.objResAtual.data"
+    *ngFor="let i of objResAtual.data"
     [featured_photo]="i.featured_photo"
     [city]="i.city"
     [country]="i.country"
@@ -18,17 +29,18 @@
 </div>
 
 
-<h3>Reservas passadas</h3>
+<h3 class="reservasAnteriores">Reservas Anteriores</h3>
 
 <div class="reservas">
   <app-casa
-    *ngFor="let i of this.objResPast.data"
+    *ngFor="let i of objResPast.data"
     [featured_photo]="i.featured_photo"
     [city]="i.city"
     [country]="i.country"
     [host_type]="i.host_type"
     [time]="i.time"
     [price]="i.price"
+    [rating]="i.rating"
     [id]="i.id"
     tipo="reservas"
   ></app-casa>

@@ -1,0 +1,11 @@
+<div class="photoGaleria">
+  <div class="photo" *ngFor="let ph of listPhotos"  [ngStyle]="{'background-image': 'url(' + ph + ')'}"
+       (click)="clickEvent(ph)"
+  >
+  </div>
+  <div class="photo big" *ngIf="bigPhoto"  [ngStyle]="{'background-image': 'url(' + bigPhoto + ')'}"
+       (click)="clickEvent(undefined)">
+  </div>
+</div>
+
+

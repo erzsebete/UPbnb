@@ -1,22 +1,37 @@
-<div class="casacontainer"  [routerLink]="['/detalhes',id]">
-
-  <div class="imagem" title="{{title}}"   [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
-    <fa-icon class="iconHeart" (click)="$event.stopPropagation(); casasService.toggleFavorite(id)" [icon]="casasService.isFavorite(id) ? faHeartFull : faHeart"></fa-icon>
+<div class="casacontainer"  [ngClass]="component" [routerLink]="['/detalhes',id]">
+  <div class="imagem">
+    <app-imagem
+      [id]=id
+      [title]=title
+      [featured_photo]=featured_photo
+    ></app-imagem>
   </div>
 
-  <div class="localstar">
-    <p class="local">{{city}}, {{country}}</p>
-    <fa-icon class="iconStar" [icon]="faStar"></fa-icon>
-    <p class="rating">{{rating | number: '1.0-1':'pt' }}</p>
-  </div>
+  <div class="texto" >
+    <div class="localstar">
+      <p class="local">{{city}}, {{country}}</p>
+      <fa-icon class="iconStar" *ngIf="rat==='all'" [icon]="faStar"></fa-icon>
 
-  <div class="anfitrireservas">
-    <p class="anfitriao" *ngIf="tipo ==='catalogo'">Anfitrião {{host_type}}</p>
-    <p class="reservas" *ngIf="tipo ==='reservas'">{{time}}</p>
-  </div>
+      <p class="rating" *ngIf="rat==='all'">{{rating | number: '1.0-1':'pt' }}</p>
+    </div>
 
-  <div class="preco">
-    <b>{{price}}€</b> noite
-  </div>
+    <div class="anfitrireservas">
+      <p class="anfitriao" *ngIf="tipo ==='catalogo'">Anfitrião {{host_type}}</p>
+      <p class="reservas" *ngIf="tipo ==='reservas'">{{time}}</p>
+    </div>
 
+    <div class="preco" *ngIf="tipo ==='catalogo'">
+      <b>{{price}}€</b> noite
+    </div>
+
+    <div class="preco" *ngIf="tipo ==='reservas'">
+      <b>{{price}}€</b>
+    </div>
+
+    <div class="fav" *ngIf="rat==='fav'">
+      <fa-icon class="iconStar"   [icon]="faStar"></fa-icon>
+      <p class="rating">{{rating | number: '1.1-1':'pt' }}</p>
+    </div>
+
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -8,14 +8,16 @@ import {faStar} from '@fortawesome/free-solid-svg-icons';
 })
 export class PessoaComponent{
 
-  faStar=faStar;
+  faStar = faStar;
 
   @Input() tipo: string = "host";
-
   @Input() photo!: string;
   @Input() name!: string;
-  @Input() date!: string;
   @Input() rating?: number;
+  @Input() date!: string;
   @Input() comment?: string;
+  @Input() country?: string;
+  @Input() city?: string;
+  @Input() id!: number;
 
 }

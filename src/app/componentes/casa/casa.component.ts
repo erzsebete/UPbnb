@@ -1,7 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {faHeart} from '@fortawesome/free-regular-svg-icons';
-import {faStar, faHeart as faHeartFull} from '@fortawesome/free-solid-svg-icons';
-import {CasasService} from "../../casas.service";
+import {Component, Input} from '@angular/core';
+import {faStar} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-casa',
@@ -9,12 +7,13 @@ import {CasasService} from "../../casas.service";
   styleUrls: ['./casa.component.scss']
 })
 export class CasaComponent {
-
-  faHeart = faHeart;
   faStar = faStar;
-  faHeartFull = faHeartFull;
+
 
   @Input() tipo: string = "catalogo";
+
+  @Input() rat: string = "all";
+
 
   @Input() featured_photo!: string;
   @Input() city!: string;
@@ -25,9 +24,6 @@ export class CasaComponent {
   @Input() time?: string;
   @Input() id! : number;
   @Input() title! : string;
-
-
-  constructor(public casasService: CasasService) {
-  }
+  @Input() component! :string;
 
 }

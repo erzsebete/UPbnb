@@ -1,28 +1,19 @@
-<div class="casacontainer">
+<div class="casacontainer" [routerLink]="['/detalhes',id]">
 
-  <div class="imagem" [ngStyle]="{'background-image': 'url(' + featured_photo + ')'}">
-    <fa-icon class="iconHeart" (click)="casasService.toggleFavorite(id)" [icon]="casasService.isFavorite(id) ? faHeartFull : faHeart"></fa-icon>
-  </div>
-
-  <div class="texto">
-
-    <div class="localstar">
-      <p class="local">{{city}}, {{country}}</p>
-
-    </div>
-
-    <div class="anfitrireservas">
-      <p class="anfitriao" *ngIf="tipo ==='catalogo'">Anfitrião {{host_type}}</p>
-    </div>
-
-    <div class="preco">
-      <b>{{price}}€</b> noite
-    </div>
-
-    <div class="localstar">
-      <fa-icon class="iconStar" [icon]="faStar"></fa-icon>
-      <p class="rating">{{rating | number: '1.0-1':'pt' }}</p>
-    </div>
+  <div class="casas">
+    <app-casa
+      [featured_photo]="featured_photo"
+      [city]="city"
+      [country]="country"
+      [host_type]="host_type"
+      [price]="price"
+      [rating]="rating"
+      [id]="id"
+      [title]="title"
+      tipo="catalogo"
+      component ="addCol"
+      rat="fav"
+    ></app-casa>
   </div>
 
 </div>

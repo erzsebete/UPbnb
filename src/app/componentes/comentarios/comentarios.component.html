@@ -1,0 +1,22 @@
+<div class="comentarios">
+  <div *ngFor="let i of listReviews">
+    <app-pessoa
+      [photo]="i.photo"
+      [name]="i.name"
+      [date]="i.date"
+      [comment]="i.comment"
+      tipo="Review"
+    ></app-pessoa>
+
+    <div class="respostahost">
+      <app-pessoa
+        [photo]="objHost.photo"
+        [name]="objHost.name"
+        tipo="host"
+      ></app-pessoa>
+
+     <p> {{i.name}}, obrigado pelo comentário! Espero pelo seu regresso a {{city}}!   </p>
+    </div>
+  </div>
+</div>
+

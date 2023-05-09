@@ -16,7 +16,11 @@ import pt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { DetalhesComponent } from './paginas/detalhes/detalhes.component';
 import { PessoaComponent } from './componentes/pessoa/pessoa.component';
-
+import {FormsModule} from "@angular/forms";
+import { FeaturesComponent } from './componentes/features/features.component';
+import { FotoscasaComponent } from './componentes/fotoscasa/fotoscasa.component';
+import { ComentariosComponent } from './componentes/comentarios/comentarios.component';
+import { ImagemComponent } from './componentes/imagem/imagem.component';
 registerLocaleData(pt)
 
 @NgModule({
@@ -30,6 +34,10 @@ registerLocaleData(pt)
     FavoritoComponent,
     DetalhesComponent,
     PessoaComponent,
+    FeaturesComponent,
+    FotoscasaComponent,
+    ComentariosComponent,
+    ImagemComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,8 @@ registerLocaleData(pt)
     FontAwesomeModule,
     HttpClientModule,
     RouterLink,
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]

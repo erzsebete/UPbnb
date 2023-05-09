@@ -18,11 +18,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.casasService.getObjCurrent().subscribe(ra => {
-      this.objResAtual = <ListaCasas>ra;
+      this.objResAtual = ra;
     })
 
     this.casasService.getObjPast().subscribe(rp => {
-      this.objResPast = <ListaCasas>rp;
+      this.objResPast = rp;
     })
   }
 

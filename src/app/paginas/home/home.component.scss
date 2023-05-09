@@ -1,5 +1,64 @@
-.reservas
-{
+
+.section1 {
+  background-color: rgb(246, 246, 246);
+  border-radius: 5px;
+  align-items: center;
+  width: 100%;
+
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+
+  height: 100px;
+
+
+  .imgprofile {
+    width: 80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 65px;
+    border-radius: 50%;
+    box-shadow: 0 -1px 2px #121111;
+  }
+
+  .texto {
+    color: #004F63;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+
+    .welcome {
+      margin-left: 14px;
+      font-size: 14pt;
+    }
+
+    .perfil {
+      margin-right: 15px;
+      font-size: 14pt;
+    }
+  }
+}
+
+
+.reservasAtuais {
+  margin-top: 50px;
+  color: #004F63;
+
+}
+
+.reservas {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.reservasAnteriores {
+  color: gray;
+  font-size: 13pt;
+  margin-top: 20px;
 }

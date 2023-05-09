@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 import {CasasService} from "../../casas.service";
-import {ListaCasas,Casa} from "../../interfaces";
-import {faMagnifyingGlass}   from '@fortawesome/free-solid-svg-icons';
+import {ListaCasas, Casa} from "../../interfaces";
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -14,30 +13,37 @@ import {faMagnifyingGlass}   from '@fortawesome/free-solid-svg-icons';
 export class CatalogoComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass
 
-
-  id: number = 0;
+  page: number = 0;
   objTodasCasas = {} as ListaCasas;
-  listaPage : Casa[] = [];
+  listaCasas: Casa[] = [];
+  frase: string = "";
+
+  loading: boolean = true;
 
 
-  constructor(private casasService : CasasService) {}
+  constructor(private casasService: CasasService) {
+  }
 
   ngOnInit(): void {
 
     this.maisResultados()
-    /*this.casasService.getListaPage(this.id).subscribe(lp => {
-      this.objTodasCasas = <ListaCasas> lp;
-      this.listaPage = this.objTodasCasas.data
-    })*/
   }
 
   maisResultados() {
-      this.id += 1 ;
-     this.casasService.getListaPage(this.id).subscribe(lp => {
-      this.objTodasCasas = <ListaCasas> lp;
-      this.listaPage.push(...this.objTodasCasas.data);
-       //this.objTodasCasas.data.forEach(i => this.listaPage.push(i));
-    })
+    this.loading=true;
+    this.page += 1;
+    this.casasService.getsearchListaPage(this.page,this.frase).subscribe(lp => {
+      if(lp) {this.loading = false}
+      this.objTodasCasas = lp;
+      this.listaCasas.push(...this.objTodasCasas.data);
 
+    })
+  }
+
+  procurar(frase: string) {
+    this.page = 0;
+    this.frase=frase;
+    this.listaCasas = [];
+    this.maisResultados();
   }
 }

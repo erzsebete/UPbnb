@@ -1,0 +1,18 @@
+<div class="caixa">
+
+  <div class="icontainer">
+    <div *ngFor="let f of listFeatures">
+      <div class="divicon" title="{{f}}" [ngClass]="'active'">
+        <fa-icon class="icon" [icon]=objfeat[f]></fa-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="icontainer">
+    <div *ngFor="let f of featuresInactive">
+      <div class="divicon" title="{{f}}">
+        <fa-icon class="icon" [icon]=objfeat[f]></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>

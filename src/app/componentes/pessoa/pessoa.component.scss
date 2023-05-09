@@ -2,21 +2,22 @@
   width: 100%;
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin-top: 10px;
+  color: #004F63;
+  background-color: rgb(246, 246, 246);
+  border-radius: 5px;
+  padding: 10px;
 
-  * {
-    margin-right: 2px;
-  }
 
   .fotopessoa {
     border-radius: 50%;
     background-size: cover;
-    padding: 8%;
     background-position: center;
-    height: min-content;
+    height: 60px;
+    width: 60px;
     margin-left: 0;
-    justify-content: flex-start;
     margin-right: 20px;
+    justify-content: flex-start;
   }
 
   .textohost {
@@ -32,7 +33,6 @@
       margin: 0;
       height: min-content;
 
-
       .iconStar {
         font-size: 12px;
         margin: 0;
@@ -43,11 +43,13 @@
         margin: 0;
         font-size: 13px;
       }
-      .data
-      {
-
-
-      }
     }
   }
+}
+
+
+.selftext{
+  margin: 15px 0;
+  color: #244e62 ;
+  text-align: justify;
 }

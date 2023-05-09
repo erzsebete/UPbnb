@@ -1,6 +1,8 @@
 
 /*----- uma casa -----*/
 
+import {IconDefinition} from "@fortawesome/free-regular-svg-icons";
+
 interface Casa {
   id: number,
   title: string,
@@ -64,7 +66,7 @@ export {Reviews};
 
 interface Photos
 {
-  photos: String
+  photos: string[]
 }
 export {Photos};
 
@@ -80,20 +82,28 @@ interface Detalhes
   rating: number,
   price: number,
   featured_photo: string
-  descrition: string
+  description: string
 }
 export {Detalhes};
 
-interface Feature
-{
 
-}
+/*----- Lista features -----*/
 
-
-/*----- features -----*/
 interface Features
 {
   features: []
 }
 export {Features};
+
+
+/*----- Cada feature -----*/
+
+
+
+
+interface Feature
+{
+ [key: string]  : IconDefinition ;
+}
+export {Feature}
 
